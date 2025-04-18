@@ -1,0 +1,84 @@
+/* public/css/index.css */
+body {
+    font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+    background-color: #fff;
+    color: #5c4438;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 720px;
+    margin: auto;
+    padding: 40px;
+}
+
+.logo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.form-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.required {
+    color: red;
+    margin-left: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #eee;
+    background-color: #f7f7f7;
+}
+
+.name-fields,
+.phone-fields,
+.gender-fields {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit-button button {
+    background-color: #5c4438;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button button:hover {
+    background-color: #433227;
+}
