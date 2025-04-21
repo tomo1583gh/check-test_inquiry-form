@@ -1,44 +1,30 @@
-/* public/css/index.css */
-body {
-    font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-    background-color: #fff;
-    color: #5c4438;
-    margin: 0;
-    padding: 40px;
-}
-
-.container {
-    max-width: 720px;
-    margin: auto;
-    padding: 40px;
-}
-
-.logo {
+.page-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 22px;
+    margin: 30px 0 20px;
+}
+
+.form {
+    width: 100%;
+}
+
+.form-row {
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    display: block;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-.title {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
-.form-table {
+.name-inputs {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 
-label {
-    font-weight: bold;
-}
-
-.required {
-    color: red;
-    margin-left: 5px;
+.gender-inputs label {
+    margin-right: 15px;
 }
 
 input[type="text"],
@@ -46,18 +32,12 @@ input[type="email"],
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #eee;
-    background-color: #f7f7f7;
-}
-
-.name-fields,
-.phone-fields,
-.gender-fields {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    max-width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    border-radius: 4px;
 }
 
 textarea {
@@ -66,19 +46,81 @@ textarea {
 
 .submit-button {
     text-align: center;
-    margin-top: 30px;
 }
 
-.submit-button button {
-    background-color: #5c4438;
-    color: #fff;
-    padding: 8px 20px;
-    font-size: 16px;
+.btn-submit {
+    background-color: #7b6c5e;
+    color: white;
     border: none;
+    padding: 10px 30px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
-.submit-button button:hover {
-    background-color: #433227;
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+.tel-inputs {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    text-align: center;
+}
+
+.tel-inputs input[type="text"] {
+    width: 150px;
+    padding: 6px;
+    font-size: 14px;
+}
+
+.form-row.horizontal {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.form-row.horizontal label {
+    width: 160px;
+    font-weight: bold;
+}
+
+.form-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1;
+}
+
+.gender-options label {
+    margin-right: 20px;
+}
+
+.tel-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.tel-input-group input[type="text"] {
+    width: 195px;
+    padding: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.name-input-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.name-input-wrapper input[type="text"] {
+    width: 315px;
+    padding: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
 }

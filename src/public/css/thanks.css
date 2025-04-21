@@ -1,0 +1,31 @@
+.thanks-wrapper {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fdfdfd;
+}
+
+.thanks-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6c5f58;
+    margin-bottom: 30px;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-home {
+    background-color: #7b6c5e;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+    background-color: #5e5247;
+}
