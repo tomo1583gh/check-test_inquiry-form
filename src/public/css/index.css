@@ -1,126 +1,89 @@
+/* index.css */
 .page-title {
     text-align: center;
-    font-size: 22px;
-    margin: 30px 0 20px;
+    font-size: 24px;
+    margin-bottom: 24px;
 }
 
-.form {
-    width: 100%;
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.form-row {
-    margin-bottom: 20px;
-}
-
-.form-row label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.name-inputs {
+.form-group {
     display: flex;
-    gap: 10px;
-}
-
-.gender-inputs label {
-    margin-right: 15px;
-}
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
-    width: 100%;
-    max-width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    font-size: 14px;
-    border-radius: 4px;
-}
-
-textarea {
-    resize: none;
-}
-
-.submit-button {
-    text-align: center;
-}
-
-.btn-submit {
-    background-color: #7b6c5e;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-submit:hover {
-    opacity: 0.9;
-}
-
-.tel-inputs {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    text-align: center;
-}
-
-.tel-inputs input[type="text"] {
-    width: 150px;
-    padding: 6px;
-    font-size: 14px;
-}
-
-.form-row.horizontal {
-    display: flex;
-    align-items: center;
     margin-bottom: 16px;
+    align-items: flex-start;
 }
 
-.form-row.horizontal label {
-    width: 200px;
+.form-group label {
+    width: 180px;
     font-weight: bold;
+    margin-right: 12px;
+    padding-top: 6px;
+    text-align: right;
 }
 
-.form-input-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.form-input {
     flex: 1;
 }
 
-.gender-options label {
-    margin-right: 20px;
-}
-
-.tel-input-group {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.tel-input-group input[type="text"] {
-    width: 180px;
-    padding: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-.name-input-wrapper {
+.name-inputs,
+.tel-inputs,
+.gender-inputs {
     display: flex;
     gap: 10px;
     flex-wrap: nowrap;
     align-items: center;
 }
 
-.name-input-wrapper input[type="text"] {
-    width: 295px;
-    padding: 6px;
+.gender-option {
+    white-space: nowrap;
+}
+
+.form-input input,
+.form-input select,
+.form-input textarea {
+    width: 100%;
+    padding: 8px;
     font-size: 14px;
-    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+.name-inputs input,
+.tel-inputs input {
+    width: auto;
+    flex: 1;
+}
+
+.form-input input[type="radio"] {
+    width: auto;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.btn-submit {
+    background-color: #5c4a3a;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.required {
+    color: red;
+    margin-left: 4px;
 }

@@ -11,7 +11,7 @@
     font-size: 24px;
     text-align: center;
     margin-bottom: 30px;
-    color: #5c4a3a;
+    color: #8b7969;
 }
 
 .search-form .form-row {
@@ -29,16 +29,47 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     min-width: 160px;
-    background-color: #fff;
+    background-color: #f4f4f4;
     font-size: 14px;
 }
 
 .btn-search,
-.btn-reset,
-.btn-export,
-.btn-detail {
+.btn-reset {
     background-color: #7b6c5e;
     color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-reset {
+    background-color: #d9c6b5;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-export {
+    background-color: #e1dbd6;
+    color: #8b7969;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-detail {
+    background-color: #f4f4f4;
+    color: #d9c6b5;
     padding: 8px 16px;
     border: none;
     border-radius: 4px;

@@ -6,9 +6,12 @@
 
 @section('content')
 <div class="thanks-wrapper">
-    <p class="thanks-message">お問い合わせありがとうございました</p>
-    <div class="btn-area">
-        <a href="{{ route('index') }}" class="btn-home">HOME</a>
+    <div class="thanks-background">Thank You</div>
+
+    <div class="thanks-message">
+        <p class="thanks-message">お問い合わせありがとうございました</p>
+        <div class="btn-area">
+            <a href="{{ route('index') }}" class="btn-home">HOME</a>
+        </div>
     </div>
-</div>
-@endsection
+    @endsection

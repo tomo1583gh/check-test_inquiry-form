@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<h2 class="page-title">確認画面</h2>
+<h2 class="page-title">Confirm</h2>
 
 <table class="confirm-table">
     <tr>
