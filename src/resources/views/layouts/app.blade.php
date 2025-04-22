@@ -19,8 +19,12 @@
 
             <div class="main-nav">
                 @auth
-                <!-- ログイン済みユーザー向け -->
-                <a href="{{ route('index') }}" class="auth-button">お問い合わせフォーム</a>
+                    <!-- 現在のページが index.blade.php（route('index')）のときは「管理画面」へ -->
+                    @if (request()->routeIs('index'))
+                        <a href="{{ route('contact.admin') }}" class="auth-button">管理画面</a>
+                    @else
+                        <a href="{{ route('index') }}" class="auth-button">お問い合わせフォーム</a>
+                @endif
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
