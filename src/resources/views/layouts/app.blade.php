@@ -19,6 +19,9 @@
 
             <div class="main-nav">
                 @auth
+                <!-- ログイン済みユーザー向け -->
+                <a href="{{ route('index') }}" class="auth-button">お問い合わせフォーム</a>
+
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="auth-button">Logout</button>
@@ -26,6 +29,7 @@
                 @endauth
 
                 @guest
+                <!-- 未ログインユーザー向け -->
                 <a href="{{ route('login') }}" class="auth-button">Login</a>
                 <a href="{{ route('register') }}" class="auth-button">Register</a>
                 @endguest

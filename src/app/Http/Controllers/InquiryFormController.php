@@ -101,52 +101,84 @@ class InquiryFormController extends Controller
 
     public function export(Request $request)
     {
-        $query = Contact::query()->with('category');
+        $query = Contact::query();
 
-        // 検索条件を再利用
+        // 検索条件があれば絞り込む
         if ($request->filled('keyword')) {
-            $keyword = $request->input('keyword');
-            $query->where(function ($q) use ($keyword) {
-                $q->where('first_name', 'like', "%$keyword%")
-                    ->orWhere('last_name', 'like', "%$keyword%")
-                    ->orWhere('email', 'like', "%$keyword%");
+            $query->where(function ($q) use ($request) {
+                $q->where('last_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('first_name', 'like', '%' . $request->keyword . '%')
+                    ->orWhere('email', 'like', '%' . $request->keyword . '%');
             });
         }
 
         if ($request->filled('gender')) {
-            $query->where('gender', $request->input('gender'));
+            $query->where('gender', $request->gender);
         }
 
         if ($request->filled('category_id')) {
-            $query->where('category_id', $request->input('category_id'));
+            $query->where('category_id', $request->category_id);
         }
 
         if ($request->filled('created_at')) {
-            $query->whereDate('created_at', $request->input('created_at'));
+            $query->whereDate('created_at', $request->created_at);
         }
 
         $contacts = $query->get();
 
-        $response = new StreamedResponse(function () use ($contacts) {
-            $stream = fopen('php://output', 'w');
-            fputcsv($stream, ['ID', '名前', '性別', 'メールアドレス', 'お問い合わせ内容', '登録日時']);
-            foreach ($contacts as $contact) {
-                fputcsv($stream, [
-                    $contact->id,
-                    $contact->last_name . ' ' . $contact->first_name,
-                    ['1' => '男性', '2' => '女性', '3' => 'その他'][$contact->gender] ?? '',
-                    $contact->email,
-                    $contact->category->content ?? '',
-                    $contact->created_at->format('Y-m-d H:i:s')
-                ]);
-            }
-            fclose($stream);
+        $csvHeader = [
+            'ID',
+            '姓',
+            '名',
+            '性別',
+            'メールアドレス',
+            '電話番号',
+            '住所',
+            '建物名',
+            'お問い合わせの種類',
+            'お問い合わせ内容',
+            '登録日時',
+        ];
+
+        $csvData = $contacts->map(function ($contact) {
+            return [
+                $contact->id,
+                $contact->last_name,
+                $contact->first_name,
+                ['1' => '男性', '2' => '女性', '3' => 'その他'][$contact->gender] ?? '',
+                $contact->email,
+                $contact->tel,
+                $contact->address,
+                $contact->building,
+                $contact->category->content ?? '',
+                $contact->detail,
+                $contact->created_at->format('Y-m-d H:i:s'),
+            ];
         });
 
-        $response->headers->set('Content-Type', 'text/csv');
-        $response->headers->set('Content-Disposition', 'attachment; filename=\"contacts.csv\"');
+        $filename = 'contacts.csv';
 
-        return $response;
+        $headers = [
+            'Content-Type' => 'text/csv; charset=UTF-8',
+            'Content-Disposition' => "attachment; filename={$filename}",
+        ];
+
+        $callback = function () use ($csvHeader, $csvData) {
+            $file = fopen('php://output', 'w');
+
+            // ここがポイント：UTF-8 BOMを出力する
+            fprintf($file, chr(0xEF) . chr(0xBB) . chr(0xBF));
+
+            fputcsv($file, $csvHeader);
+
+            foreach ($csvData as $row) {
+                fputcsv($file, $row);
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 
     public function delete(Request $request)

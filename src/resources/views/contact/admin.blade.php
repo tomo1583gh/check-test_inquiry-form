@@ -41,6 +41,12 @@
 
     <div class="search-actions">
         <form method="GET" action="{{ route('contact.export') }}" class="export-form">
+            {{-- 検索条件を hidden で引き継ぐ --}}
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+            <input type="hidden" name="gender" value="{{ request('gender') }}">
+            <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+            <input type="hidden" name="created_at" value="{{ request('created_at') }}">
+
             <button type="submit" class="btn-export">エクスポート</button>
         </form>
 
