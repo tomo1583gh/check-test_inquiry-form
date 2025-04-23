@@ -13,6 +13,16 @@ return [
     |
     */
 
+    'required' => ':attribute を入力してください。',
+    'email' => ':attribute は「ユーザー名@ドメイン」形式で入力してください。',
+    'confirmed' => ':attribute 確認が一致しません。',
+    'max' => [
+        'string' => ':attribute は :max 文字以内で入力してください。',
+    ],
+    'min' => [
+        'string' => ':attribute は :min 文字以上で入力してください。',
+    ],
+    /*
     'accepted' => 'The :attribute must be accepted.',
     'accepted_if' => 'The :attribute must be accepted when :other is :value.',
     'active_url' => 'The :attribute is not a valid URL.',
@@ -129,6 +139,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute must be a valid URL.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    */
 
     /*
     |--------------------------------------------------------------------------
@@ -142,8 +153,17 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'お名前を入力してください',
+        ],
+        'email' => [
+            'required' => 'メールアドレスを入力してください',
+            'email' => 'メールアドレスは「ユーザー名@ドメイン」形式で入力してください',
+        ],
+        'password' => [
+            'required' => 'パスワードを入力してください',
+            'confirmed' => 'パスワード確認が一致しません',
+            'min' => 'パスワードは :min 文字以上で入力してください',
         ],
     ],
 
@@ -158,6 +178,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'お名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        'password_confirmation' => 'パスワード確認',
+    ],
 
 ];

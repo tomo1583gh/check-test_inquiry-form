@@ -9,6 +9,9 @@
     <!-- 共通CSSの読み込み -->
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
     @yield('head')
 </head>
 
@@ -19,11 +22,11 @@
 
             <div class="main-nav">
                 @auth
-                    <!-- 現在のページが index.blade.php（route('index')）のときは「管理画面」へ -->
-                    @if (request()->routeIs('index'))
-                        <a href="{{ route('contact.admin') }}" class="auth-button">管理画面</a>
-                    @else
-                        <a href="{{ route('index') }}" class="auth-button">お問い合わせフォーム</a>
+                <!-- 現在のページが index.blade.php（route('index')）のときは「管理画面」へ -->
+                @if (request()->routeIs('index'))
+                <a href="{{ route('contact.admin') }}" class="auth-button">管理画面</a>
+                @else
+                <a href="{{ route('index') }}" class="auth-button">お問い合わせフォーム</a>
                 @endif
 
                 <form method="POST" action="{{ route('logout') }}">

@@ -14,6 +14,7 @@
 }
 
 .thanks-background {
+    font-family: 'Playfair Display', serif;
     position: absolute;
     font-size: 160px;
     font-weight: bold;
@@ -29,17 +30,18 @@
 .thanks-message {
     position: relative;
     z-index: 1;
+    font-size: 20px;
 }
 
 .thanks-text {
     font-size: 18px;
     color: #7b6c5e;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
 }
 
 .btn-home {
     display: inline-block;
-    background-color: #7b6c5e;
+    background-color: #8b7969;
     color: white;
     padding: 8px 24px;
     text-decoration: none;

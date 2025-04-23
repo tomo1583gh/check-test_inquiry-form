@@ -37,4 +37,9 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
     }
+
+    protected function passwordRules()
+    {
+        return ['required', 'string', 'min:8']; // 'confirmed' を削除
+    }
 }

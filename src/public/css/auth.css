@@ -12,10 +12,11 @@ body {
 }
 
 .auth-title {
+    font-family: 'Playfair Display', serif;
     text-align: center;
     font-size: 22px;
     margin-bottom: 30px;
-    color: #5f4c3b;
+    color: #8b7969;
 }
 
 .auth-form .form-row {
@@ -47,7 +48,7 @@ body {
 }
 
 .btn-submit {
-    background-color: #7b6c5e;
+    background-color: #82756a;
     color: #fff;
     border: none;
     padding: 10px 40px;
@@ -58,4 +59,10 @@ body {
 
 .btn-submit:hover {
     background-color: #5e5247;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
 }

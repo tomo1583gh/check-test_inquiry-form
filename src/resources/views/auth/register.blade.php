@@ -15,23 +15,23 @@
 
         <!-- 名前 -->
         <div class="form-row">
-            <label for="name">名前</label>
-            <input type="text" name="name" id="name" value="{{ old('name') }}" required autofocus placeholder="例：山田太郎">
-            @error('name') <div class="error">{{ $message }}</div> @enderror
+            <label for="name">お名前</label>
+            <input type="text" name="name" id="name" value="{{ old('name') }}" required placeholder="例：山田太郎">
+            @error('name') <div class="error-message">{{ $message }}</div> @enderror
         </div>
 
         <!-- メールアドレス -->
         <div class="form-row">
             <label for="email">メールアドレス</label>
             <input type="email" name="email" id="email" value="{{ old('email') }}" required placeholder="例：test@example.com">
-            @error('email') <div class="error">{{ $message }}</div> @enderror
+            @error('email') <div class="error-message">{{ $message }}</div> @enderror
         </div>
 
         <!-- パスワード -->
         <div class="form-row">
             <label for="password">パスワード</label>
             <input type="password" name="password" id="password" required placeholder="例：8文字以上の英数字">
-            @error('password') <div class="error">{{ $message }}</div> @enderror
+            @error('password') <div class="error-message">{{ $message }}</div> @enderror
         </div>
 
         <!-- ボタン -->

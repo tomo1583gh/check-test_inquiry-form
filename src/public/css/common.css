@@ -66,7 +66,8 @@ header h1 {
 }
 
 .main-logo {
-    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
     font-weight: bold;
     color: #5f4c3b;
     margin: 0;
@@ -74,6 +75,7 @@ header h1 {
 }
 
 .main-nav {
+    font-family: 'Playfair Display', serif;
     display: flex;
     align-items: center;
     gap: 10px;
