@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
 
 class ContactFactory extends Factory
 {
@@ -16,15 +17,13 @@ class ContactFactory extends Factory
         return [
             'last_name' => $this->faker->lastName,
             'first_name' => $this->faker->firstName,
-            'gender' => $this->faker->randomElement([1, 2, 3]),
-            'email' => $this->faker->unique()->safeEmail,
-            'tel' => $this->faker->numerify('080########'),
+            'gender' => $this->faker->numberBetween(1, 3),
+            'email' => $this->faker->safeEmail,
+            'tel' => '090-' . $this->faker->numberBetween(1000, 9999) . '-' . $this->faker->numberBetween(1000, 9999),
             'address' => $this->faker->address,
-            'building' => $this->faker->optional()->secondaryAddress,
-            'category_id' => $this->faker->numberBetween(1, 5), // カテゴリIDは1〜5と仮定
-            'detail' => $this->faker->realText(100),
-            'created_at' => now(),
-            'updated_at' => now(),
+            'building' => $this->faker->secondaryAddress,
+            'detail' => $this->faker->realText(80),
+            'category_id' => Category::inRandomOrder()->first()->id,
         ];
     }
 }
