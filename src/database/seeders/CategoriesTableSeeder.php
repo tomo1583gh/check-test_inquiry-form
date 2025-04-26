@@ -14,6 +14,9 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('categories')->delete();
+
+        //その後固定データを挿入する
         DB::table('categories')->insert([
             ['content' => '商品のお届けについて'],
             ['content' => '商品の交換について'],
