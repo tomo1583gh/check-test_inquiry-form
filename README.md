@@ -35,7 +35,7 @@
 
 ## **ER図**
 
-![ER図](test-ER.png)
+![ER図](true-answer.png)
 
 ## **テストログイン情報**
 
