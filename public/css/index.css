@@ -1,0 +1,106 @@
+/* index.css */
+.page-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #8b7969;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    align-items: flex-start;
+}
+
+.form-group label {
+    width: 180px;
+    font-weight: bold;
+    margin-right: 12px;
+    padding-top: 6px;
+    text-align: right;
+}
+
+.form-input {
+    flex: 1;
+}
+
+.name-inputs,
+.tel-inputs,
+.gender-inputs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.gender-option {
+    white-space: nowrap;
+}
+
+.form-input input,
+.form-input select,
+.form-input textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+}
+
+.name-inputs input,
+.tel-inputs input {
+    width: auto;
+    flex: 1;
+}
+
+.form-input input[type="radio"] {
+    width: auto;
+}
+
+.error,
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-left: 200px;
+}
+
+.name-error {
+    display: inline-flex;
+    gap: 10px;            /* エラー同士の間隔。好みでOK */
+    align-items: center;
+    white-space: nowrap;  /* 折り返し防止 */
+    flex-wrap: nowrap;    /* flex要素を折り返さない */
+    color: red;
+    font-size: 13px;
+}
+
+.name-errors > div {
+    white-space: nowrap;  /* 各エラー文にも折り返し禁止 */
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.btn-submit {
+    background-color: #82756a;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.required {
+    color: red;
+    margin-left: 4px;
+}
