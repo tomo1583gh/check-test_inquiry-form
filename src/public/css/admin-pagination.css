@@ -1,0 +1,48 @@
+
+/* ページネーション全体を左寄せで横並びに */
+.custom-pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ページ番号のボックススタイル */
+.custom-pagination .page-item {
+    list-style: none;
+}
+
+.custom-pagination .page-link {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #5c4a3a;
+    background-color: #fff;
+    border: 1px solid #d4cfc8;
+    border-radius: 6px;
+    min-width: 36px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* アクティブなページ番号 */
+.custom-pagination .page-item.active .page-link {
+    background-color: #5c4a3a;
+    color: #fff;
+    border: none;
+}
+
+/* ホバー時の変化 */
+.custom-pagination .page-link:hover {
+    background-color: #ece7e2;
+    color: #333;
+}
+
+/* 無効なリンク */
+.custom-pagination .page-item.disabled .page-link {
+    background-color: #f5f5f5;
+    color: #aaa;
+    cursor: not-allowed;
+}
